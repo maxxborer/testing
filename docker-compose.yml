@@ -15,7 +15,7 @@ services:
       - "80:80"
       - "443:443"
     networks:
-      - ***REMOVED***-test
+      - ***REMOVED***-landing
 
   nextjs:
     image: "nextjs"
@@ -30,8 +30,8 @@ services:
     ports:
       - "3001:3001"
     networks:
-      - ***REMOVED***-test
+      - ***REMOVED***-landing
 
 networks:
-  ***REMOVED***-test:
+  ***REMOVED***-landing:
     driver: bridge
