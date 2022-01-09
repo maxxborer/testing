@@ -184,16 +184,16 @@ clean_up:
     - docker info
     - docker-compose version
     - docker-compose config
-    - echo ${HUB_PASSWORD} | docker login -u ${HUB_USER} http://nexus.***REMOVED***.tech:10010 --password-stdin
-    - echo ${HUB_PASSWORD} | docker login -u ${HUB_USER} http://nexus.***REMOVED***.tech:10011 --password-stdin
+    - echo ${HUB_PASSWORD} | docker login -u ${HUB_USER} http://nexus.maxxborer.tech:10010 --password-stdin
+    - echo ${HUB_PASSWORD} | docker login -u ${HUB_USER} http://nexus.maxxborer.tech:10011 --password-stdin
     - docker-compose pull
     - docker-compose build
     - docker-compose push
-    - export CUSTOM_VERSION_FOR_IMAGE=$CI_COMMIT_SHORT_SHA
+    - export CUSTOM_VERSION_FOR_IMAGE=$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA
     - docker-compose build
     - docker-compose push
     - docker-compose ps
-    - export CUSTOM_VERSION_FOR_IMAGE=$CI_COMMIT_SHORT_SHA
+    # - export CUSTOM_VERSION_FOR_IMAGE=$CI_COMMIT_SHORT_SHA
     - docker-compose up -d
   cache:
     key: $CI_COMMIT_REF_NAME

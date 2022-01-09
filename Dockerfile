@@ -1,5 +1,5 @@
 # Production image, copy all the files and run next
-FROM nexus.***REMOVED***.tech:10010/node:16-alpine
+FROM nexus.maxxborer.tech:10010/node:16-alpine
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 # ENV NODE_ENV production

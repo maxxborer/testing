@@ -1,4 +1,4 @@
-FROM nexus.***REMOVED***.tech:10010/nginx:1.19.9-alpine
+FROM nexus.maxxborer.tech:10010/nginx:1.19.9-alpine
 
 COPY ./config /etc/nginx/config
 COPY ./config/html/error.html /var/www/default/error.html

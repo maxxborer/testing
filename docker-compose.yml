@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   test-nextjs:
-    image: nexus.***REMOVED***.tech:10011/test-nextjs:${CUSTOM_VERSION_FOR_IMAGE:-latest}
+    image: nexus.maxxborer.tech:10011/test-nextjs:${CUSTOM_VERSION_FOR_IMAGE:-latest}
     container_name: ${COMPOSE_PROJECT_NAME}-nextjs
     environment:
       - NODE_ENV
@@ -12,11 +12,11 @@ services:
       dockerfile: Dockerfile
       context: ./
       cache_from:
-      - nexus.***REMOVED***.tech:10011/test-nextjs:latest
+      - nexus.maxxborer.tech:10011/test-nextjs:latest
     restart: unless-stopped
 
   test-proxy:
-    image: nexus.***REMOVED***.tech:10011/test-proxy:${CUSTOM_VERSION_FOR_IMAGE:-latest}
+    image: nexus.maxxborer.tech:10011/test-proxy:${CUSTOM_VERSION_FOR_IMAGE:-latest}
     container_name: ${COMPOSE_PROJECT_NAME}-proxy
     environment:
       - DOMAIN
@@ -30,7 +30,7 @@ services:
       dockerfile: Dockerfile
       context: ./nginx
       cache_from:
-      - nexus.***REMOVED***.tech:10011/test-proxy:latest
+      - nexus.maxxborer.tech:10011/test-proxy:latest
     restart: always
     labels:
       - traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host("${SUBDOMAIN}${DOMAIN}")
